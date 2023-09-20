@@ -4,12 +4,15 @@ metadata:
   name: node-test-server-v1
 spec:
   replicas: 1
+  selector:
+    matchLabels:
+      app: node-test-server
   template:
     metadata:
       labels:
         app: node-test-server
         version: v1
-    spec:   
+    spec:
       containers:
         - name: node-test-server
           image: kimsehwan96/node-server

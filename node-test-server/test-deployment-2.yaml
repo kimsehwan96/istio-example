@@ -4,6 +4,9 @@ metadata:
   name: node-test-server-v2
 spec:
   replicas: 1
+  selector:
+    matchLabels:
+      app: node-test-server
   template:
     metadata:
       labels:
