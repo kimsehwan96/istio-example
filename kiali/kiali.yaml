@@ -23,4 +23,4 @@ spec:
         - app_label: istio-ingressgateway
           is_core: true
           is_proxy: true
-          namespace: istio-ingress
+          namespace: istio-system

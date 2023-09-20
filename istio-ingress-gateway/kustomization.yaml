@@ -1,4 +1,4 @@
-namespace: istio-ingress
+namespace: istio-system
 
 resources:
   - ./istio-ingress-namespace.yaml
@@ -8,4 +8,4 @@ helmCharts:
     repo: https://istio-release.storage.googleapis.com/charts
     releaseName: istio-ingressgateway
     version: 1.19.0
-    namespace: istio-ingress
+    namespace: istio-system
