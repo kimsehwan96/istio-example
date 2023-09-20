@@ -13,16 +13,22 @@ spec:
     view_only_mode: false
   server:
     web_root: "/kiali"
-  istio:
-    component_status:
-      components:
-        - app_label: istiod
-          is_core: true
-          is_proxy: false
-          namespace: istio-system
-        - app_label: istio-ingressgateway
-          is_core: true
-          is_proxy: true
-          namespace: istio-system
-  prometheus:
-    url: http://kube-prometheus-stack-prometheus.kube-prometheus-stack.svc.cluster.local:9090
+  external_services:
+    custom_dashboards:
+      prometheus:
+        url: http://kube-prometheus-stack-prometheus.kube-prometheus-stack.svc.cluster.local:9090
+        auth:
+          insecure_skip_verify: false
+    istio:
+      component_status:
+        components:
+          - app_label: istiod
+            is_core: true
+            is_proxy: false
+            namespace: istio-system
+          - app_label: istio-ingressgateway
+            is_core: true
+            is_proxy: true
+            namespace: istio-system
+    prometheus:
+      url: http://kube-prometheus-stack-prometheus.kube-prometheus-stack.svc.cluster.local:9090
