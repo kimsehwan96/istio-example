@@ -1,0 +1,8 @@
+namespace: node-test-server
+
+resources:
+  - ./namespace.yaml
+  - ./test-deployment-1.yaml
+  - ./test-deployment-2.yaml
+  - ./service.yaml
+
