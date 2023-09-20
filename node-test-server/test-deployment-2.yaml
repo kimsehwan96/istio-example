@@ -9,6 +9,7 @@ spec:
       labels:
         app: node-test-server
         version: v2
+    spec:
       containers:
         - name: node-test-server
           image: kimsehwan96/node-server
