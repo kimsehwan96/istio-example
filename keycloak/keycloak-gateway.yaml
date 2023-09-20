@@ -5,7 +5,7 @@ metadata:
   # namespace: keycloak
 spec:
   selector:
-    istio: ingress-gateway
+    istio: ingressgateway
   servers:
     - hosts:
         # - keycloak.local.dev

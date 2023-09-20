@@ -5,7 +5,7 @@ metadata:
   # namespace: kiali
 spec:
   selector:
-    istio: ingress-gateway
+    istio: ingressgateway
   servers:
     - hosts:
         # - kiali.local.dev

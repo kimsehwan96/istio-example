@@ -5,7 +5,7 @@ metadata:
   # namespace: argocd
 spec:
   selector:
-    istio: ingress-gateway
+    istio: ingressgateway
   servers:
     - hosts:
         # - argocd.local.dev

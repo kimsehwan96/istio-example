@@ -39,7 +39,7 @@ metadata:
   # namespace: httpbin
 spec:
   selector:
-    istio: ingress-gateway
+    istio: ingressgateway
   servers:
     - hosts:
         # - httpbin.local.dev
