@@ -12,6 +12,7 @@ spec:
       labels:
         app: node-test-server
         version: v2
+        sidecar.istio.io/inject: 'true'
     spec:
       containers:
         - name: node-test-server
