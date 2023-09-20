@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Service
 metadata:
-name: node-test-server-service
+  name: node-test-server-service
 labels:
   app: node-test-server
 spec:
