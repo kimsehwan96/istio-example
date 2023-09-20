@@ -20,7 +20,7 @@ spec:
           is_core: true
           is_proxy: false
           namespace: istio-system
-        - app_label: istio-ingress-gateway
+        - app_label: istio-ingressgateway
           is_core: true
           is_proxy: true
           namespace: istio-ingress
