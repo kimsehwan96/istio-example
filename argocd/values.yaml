@@ -1,0 +1,11 @@
+fullnameOverride: argocd
+repoServer:
+  containerSecurityContext:
+    seccompProfile:
+      type: Unconfined
+configs:
+  cm:
+    application.instanceLabelKey: app.kubernetes.io/instance
+    kustomize.buildOptions: --enable-alpha-plugins --enable-helm --load-restrictor LoadRestrictionsNone
+  params:
+    server.insecure: true
