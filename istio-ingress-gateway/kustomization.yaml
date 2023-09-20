@@ -1,0 +1,11 @@
+namespace: istio-ingress
+
+resources:
+  - ./istio-ingress-namespace.yaml
+helmCharts:
+  - name: gateway
+    includeCRDs: true
+    repo: https://istio-release.storage.googleapis.com/charts
+    releaseName: istio-ingress-gateway
+    version: 1.19.0
+    namespace: istio-ingress

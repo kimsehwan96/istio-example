@@ -1,0 +1,18 @@
+namespace: istio-system
+
+resources:
+  - ./istio-namespace.yaml
+  - ./istio-ingressclass.yaml
+helmCharts:
+  - name: base
+    includeCRDs: true
+    repo: https://istio-release.storage.googleapis.com/charts
+    releaseName: istio-base
+    version: 1.19.0
+    namespace: istio-system
+  - name: istiod
+    includeCRDs: true
+    repo: https://istio-release.storage.googleapis.com/charts
+    releaseName: istiod
+    version: 1.19.0
+    namespace: istio-system
