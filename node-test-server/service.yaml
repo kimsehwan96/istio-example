@@ -2,8 +2,8 @@ apiVersion: v1
 kind: Service
 metadata:
   name: node-test-server-service
-labels:
-  app: node-test-server
+  labels:
+    app: node-test-server
 spec:
   type: ClusterIP
   selector:
