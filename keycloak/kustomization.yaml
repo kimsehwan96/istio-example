@@ -1,0 +1,14 @@
+namespace: keycloak
+
+resources:
+  - ./keycloak-namespace.yaml
+  - ./keycloak-gateway.yaml
+  - ./keycloak-virtualservice.yaml
+helmCharts:
+  - name: keycloak
+    includeCRDs: true
+    repo: https://charts.bitnami.com/bitnami
+    releaseName: keycloak
+    version: 16.1.5
+    namespace: keycloak
+    valuesFile: values.yaml

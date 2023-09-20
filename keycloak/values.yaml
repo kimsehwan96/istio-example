@@ -1,0 +1,21 @@
+auth:
+  adminUser: test@test.com
+  adminPassword: test1234 # 프로덕션 환경에서는 existingSecret을 사용해야 함
+production: false
+proxy: edge
+replicaCount: 1
+# metrics:
+#   enabled: true
+#   serviceMonitor:
+#     enabled: true
+#     namespace: monitoring
+#   prometheusRule:
+#     enabled: true
+#     namespace: monitoring
+postgresql:
+  enabled: true
+  auth:
+    username: keycloak
+    database: keycloak
+    postgresqlDatabase: keycloak
+    password: keycloak

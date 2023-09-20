@@ -1,20 +1,8 @@
-repoURL: https://github.com/kimsehwan96/istio-example.git
+repoURL: ""
 
 apps:
   - name: apps
     namespace: argocd
     path: apps
     targetRevision: master
-  - name: argocd
-    namespace: argocd
-    path: argocd
-    targetRevision: master
-  - name: istiod
-    namespace: istio-system
-    path: istiod
-    targetRevision: master
-  - name: istio-ingress-gateway
-    namespace: istio-ingress
-    path: istio-ingress-gateway
-    targetRevision: master
-
+    

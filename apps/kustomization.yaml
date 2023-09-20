@@ -4,3 +4,4 @@ helmCharts:
   - name: apps
     version: 0.0.1
     namespace: argocd
+    valuesFile: values.yaml
