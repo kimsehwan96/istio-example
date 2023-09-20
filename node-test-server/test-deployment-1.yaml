@@ -1,0 +1,18 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: node-test-server-v1
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: node-test-server
+        version: v1
+      containers:
+        - name: node-test-server
+          image: kimsehwan96/node-server
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 3000
+              name: http

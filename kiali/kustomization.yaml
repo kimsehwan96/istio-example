@@ -1,0 +1,16 @@
+namespace: kiali
+
+resources:
+  - ./kiali-namespace.yaml
+  - ./kiali.yaml
+  - ./kiali-gateway.yaml
+  - ./kiali-virtualservice.yaml
+
+helmCharts:
+  - name: kiali-operator
+    includeCRDs: true
+    repo: https://kiali.org/helm-charts
+    releaseName: kiali-operator
+    namespace: kiali
+    version: 1.74.0
+    valuesFile: values.yaml

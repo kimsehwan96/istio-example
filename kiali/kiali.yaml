@@ -1,0 +1,26 @@
+apiVersion: kiali.io/v1alpha1
+kind: Kiali
+metadata:
+  name: kiali
+  namespace: kiali
+spec:
+  auth:
+    strategy: anonymous
+  istio_namespace: istio-system
+  deployment:
+    namespace: kiali
+    accessible_namespaces: ["**"]
+    view_only_mode: false
+  server:
+    web_root: "/kiali"
+  istio:
+    component_status:
+      components:
+        - app_label: istiod
+          is_core: true
+          is_proxy: false
+          namespace: istio-system
+        - app_label: istio-ingress-gateway
+          is_core: true
+          is_proxy: true
+          namespace: istio-ingress

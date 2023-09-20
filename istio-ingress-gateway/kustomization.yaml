@@ -6,6 +6,6 @@ helmCharts:
   - name: gateway
     includeCRDs: true
     repo: https://istio-release.storage.googleapis.com/charts
-    releaseName: istio-ingress-gateway
+    releaseName: istio-ingressgateway
     version: 1.19.0
     namespace: istio-ingress
