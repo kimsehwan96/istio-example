@@ -30,7 +30,7 @@ apps:
     path: kube-prometheus-stack
     targetRevision: master
   - name: node-test-server
-    namesapce: node-test-server
+    namespace: node-test-server
     path: node-test-server
     targetRevision: master
   - name: python-test-server-1
