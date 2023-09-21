@@ -19,7 +19,7 @@ spec:
       prometheus:
         url: http://prometheus-operated.kube-prometheus-stack.svc.cluster.local:9090
         auth:
-          insecure_skip_verify: false
+          insecure_skip_verify: true
     istio:
       component_status:
         components:

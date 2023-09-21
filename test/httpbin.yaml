@@ -36,13 +36,12 @@ apiVersion: networking.istio.io/v1alpha3
 kind: Gateway
 metadata:
   name: httpbin-gateway
-  # namespace: httpbin
+  namespace: httpbin
 spec:
   selector:
     istio: ingressgateway
   servers:
     - hosts:
-        # - httpbin.local.dev
         - 'app.hayden.com'
       port:
         name: http
@@ -64,13 +63,11 @@ apiVersion: networking.istio.io/v1alpha3
 kind: VirtualService
 metadata:
   name: httpbin-virtualservice
-  # namespace: httpbin
+  namespace: httpbin
 spec:
   gateways:
     - httpbin-gateway
   hosts:
-    # - 'httpbin.local.dev'
-    # - 'localhost'
     - 'app.hayden.com'
   http:
     - match:
