@@ -12,22 +12,42 @@ prometheus:
           resources:
             requests:
               storage: 10Gi
-    volumes:
-      - name: istio-certs
-        emptyDir:
-          medium: Memory
-    volumeMounts:
-      - name: istio-certs
-        mountPath: /etc/prom-certs/
-        readOnly: true
-    podMetadata:
-      annotations:
-        traffic.sidecar.istio.io/includeInboundPorts: ""
-        traffic.sidecar.istio.io/includeOutboundIPRanges: ""
-        proxy.istio.io/config: |
-          proxyMetadata:
-            OUTPUT_CERTS: /etc/istio-output-certs
-        sidecar.istio.io/userVolumeMount: '[{"name": "istio-certs", "mountPath": "/etc/istio-output-certs"}]' # mount the shared volume at sidecar proxy
+    additionalScrapeConfigs:
+      - job_name: 'istiod'
+        kubernetes_sd_configs:
+        - role: endpoints
+          namespaces:
+            names:
+            - istio-system
+        relabel_configs:
+        - source_labels: [__meta_kubernetes_service_name, __meta_kubernetes_endpoint_port_name]
+          action: keep
+          regex: istiod;http-monitoring
+      - job_name: 'envoy-stats'
+        metrics_path: /stats/prometheus
+        kubernetes_sd_configs:
+        - role: pod
+
+        relabel_configs:
+        - source_labels: [__meta_kubernetes_pod_container_port_name]
+          action: keep
+          regex: '.*-envoy-prom'
+    # volumes:
+    #   - name: istio-certs
+    #     emptyDir:
+    #       medium: Memory
+    # volumeMounts:
+    #   - name: istio-certs
+    #     mountPath: /etc/prom-certs/
+    #     readOnly: true
+    # podMetadata:
+    #   annotations:
+    #     traffic.sidecar.istio.io/includeInboundPorts: ""
+    #     traffic.sidecar.istio.io/includeOutboundIPRanges: ""
+    #     proxy.istio.io/config: |
+    #       proxyMetadata:
+    #         OUTPUT_CERTS: /etc/prom-certs
+    #     sidecar.istio.io/userVolumeMount: '[{"name": "istio-certs", "mountPath": "/etc/prom-certs"}]' # mount the shared volume at sidecar proxy
 defaultRules:
   create: false
   rules:

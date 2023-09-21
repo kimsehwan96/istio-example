@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: python-test-server-v1
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: python-test-server-1
+  template:
+    metadata:
+      labels:
+        app: python-test-server-1
+        sidecar.istio.io/inject: 'true'
+    spec:
+      containers:
+        - name: python-test-server
+          image: kimsehwan96/python-server
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 5000
+              name: http
+          env:
+            - name: APP_NAME
+              value: "1번앱"
+            - name: FORWARD_ENDPOINT
+              value: "http://python-test-server-service-2.python-test-server-2.svc.cluster.local/forward"
+            - name: APP_PORT
+              value: "5000"

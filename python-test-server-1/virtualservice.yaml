@@ -1,0 +1,18 @@
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: python-virtualservice
+spec:
+  gateways:
+    - python-gateway
+  hosts:
+    - 'python.hayden.com'
+  http:
+    - match:
+        - uri:
+            prefix: /
+      route:
+        - destination:
+            host: python-test-server-service-1.python-test-server-1.svc.cluster.local
+            port:
+              number: 80

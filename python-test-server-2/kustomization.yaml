@@ -1,0 +1,7 @@
+namespace: python-test-server-2
+
+resources:
+  - ./namespace.yaml
+  - ./deployment.yaml
+  - ./service.yaml
+

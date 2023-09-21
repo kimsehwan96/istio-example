@@ -5,4 +5,5 @@ resources:
   - ./test-deployment-1.yaml
   - ./test-deployment-2.yaml
   - ./service.yaml
+  - ./mtls.yaml
 
