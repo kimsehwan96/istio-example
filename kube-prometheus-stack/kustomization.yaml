@@ -4,6 +4,7 @@ resources:
   - ./namespace.yaml
   - ./grafana-gateway.yaml
   - ./grafana-virtualservice.yaml
+  - ./prometheus-istio-scrape-rule.yaml
 
 
 helmCharts:
