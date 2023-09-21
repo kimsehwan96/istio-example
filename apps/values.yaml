@@ -45,3 +45,7 @@ apps:
     namespace: python-test-server-2
     path: python-test-server-2
     targetRevision: master
+  - name: eck
+    namespace: elastic-system
+    path: eck
+    targetRevision: master

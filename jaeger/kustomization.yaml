@@ -1,0 +1,12 @@
+namespace: jaeger
+
+resources:
+  - ./jaeger-namespace.yaml
+helmCharts:
+  - name: jaeger
+    includeCRDs: true
+    repo: https://jaegertracing.github.io/helm-charts
+    releaseName: jaeger
+    version: 0.71.14
+    namespace: jaeger
+    valuesFile: values.yaml
