@@ -4,8 +4,7 @@ resources:
   - ./namespace.yaml
   - ./grafana-gateway.yaml
   - ./grafana-virtualservice.yaml
-  - ./prometheus-istio-scrape-rule.yaml
-
+  - ./istio-metrics-aggregation.yaml
 
 helmCharts:
   - name: kube-prometheus-stack
@@ -15,3 +14,11 @@ helmCharts:
     includeCRDs: true
     repo: https://prometheus-community.github.io/helm-charts
     valuesFile: values.yaml
+
+secretGenerator:
+  - name: additional-scrape-config
+    files:
+      - additional-scrape-config.yaml
+
+generatorOptions:
+  disableNameSuffixHash: true
