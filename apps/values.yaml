@@ -25,10 +25,6 @@ apps:
     namespace: kiali
     path: kiali
     targetRevision: master
-  - name: node-test-server
-    namespace: node-test-server
-    path: node-test-server
-    targetRevision: master
   - name: kube-prometheus-stack
     namespace: kube-prometheus-stack
     path: kube-prometheus-stack
