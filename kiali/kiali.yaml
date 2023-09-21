@@ -32,7 +32,7 @@ spec:
             is_proxy: true
             namespace: istio-system
     prometheus:
-      url: http:/prometheus-operated.kube-prometheus-stack.svc.cluster.local:9090
+      url: http://prometheus-operated.kube-prometheus-stack.svc.cluster.local:9090
     grafana:
       auth:
         username: admin
