@@ -1,0 +1,12 @@
+version: 8.5.0
+spec:
+  count: 1
+  elasticsearchRef:
+    name: elasticsearch-eck-elasticsearch
+  http:
+    service:
+      spec:
+        type: ClusterIP
+    tls:
+      selfSignedCertificate:
+        disabled: true
