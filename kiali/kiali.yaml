@@ -17,7 +17,7 @@ spec:
     custom_dashboards:
       enabled: true
       prometheus:
-        url: http://kube-prometheus-stack-prometheus.kube-prometheus-stack.svc.cluster.local:9090
+        url: http://prometheus-operated.kube-prometheus-stack.svc.cluster.local:9090
         auth:
           insecure_skip_verify: false
     istio:
@@ -32,7 +32,7 @@ spec:
             is_proxy: true
             namespace: istio-system
     prometheus:
-      url: http://kube-prometheus-stack-prometheus.kube-prometheus-stack.svc.cluster.local:9090
+      url: http:/prometheus-operated.kube-prometheus-stack.svc.cluster.local:9090
     grafana:
       auth:
         username: admin
