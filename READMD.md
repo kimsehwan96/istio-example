@@ -1,4 +1,4 @@
-# Istio test with docker desktop k8s cluster for local testing
+# Istio test with docker desktop k8s cluster for local testing (manifests repo)
 
 ## Enviornment
 
