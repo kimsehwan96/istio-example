@@ -2,6 +2,8 @@ namespace: elastic-system
 
 resources:
   - ./eck-namespace.yaml
+  - ./kibana-gateway.yaml
+  - ./kibana-virtualservice.yaml
 
 helmCharts:
   - name: eck-operator

@@ -22,7 +22,8 @@ version: 8.8.0-SNAPSHOT
 
 # Labels that will be applied to Kibana.
 #
-labels: {}
+labels:
+  sidecar.istio.io/inject: "true"
 
 # Annotations that will be applied to Kibana.
 #
