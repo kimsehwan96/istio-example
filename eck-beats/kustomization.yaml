@@ -1,0 +1,8 @@
+namespace: elastic-system
+
+helmCharts:
+  - name: eck-beats
+    version: 0.2.0
+    namespace: elastic-system
+    releaseName: eck-beats
+    valuesFile: values.yaml

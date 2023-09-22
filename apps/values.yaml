@@ -45,3 +45,7 @@ apps:
     namespace: elastic-system
     path: eck
     targetRevision: master
+  - name: eck-beats
+    namespace: elastic-system
+    path: eck-beats
+    targetRevision: master
