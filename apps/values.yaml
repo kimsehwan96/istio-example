@@ -49,3 +49,8 @@ apps:
     namespace: elastic-system
     path: eck-beats
     targetRevision: master
+  - name: logstash
+    namespace: elastic-system
+    path: logstash
+    targetRevision: master
+

@@ -1,0 +1,9 @@
+namespace: elastic-system
+
+helmCharts:
+  - name: logstash
+    version: 8.5.1
+    namespace: elastic-system
+    releaseName: logstash
+    repo: https://helm.elastic.co
+    valuesFile: values.yaml
