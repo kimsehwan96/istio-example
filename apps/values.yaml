@@ -53,4 +53,7 @@ apps:
     namespace: elastic-system
     path: logstash
     targetRevision: master
-
+  - name: metrics-server
+    namespace: metrics-server
+    path: metrics-server
+    targetRevision: master

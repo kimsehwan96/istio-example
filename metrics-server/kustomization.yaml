@@ -1,0 +1,12 @@
+namespace: metrics-server
+
+resources:
+  - metrics-server-namespace.yaml
+
+helmCharts:
+  - name: metrics-server
+    version: 3.11.0
+    namespace: metrics-server
+    releaseName: metrics-server
+    repo: https://kubernetes-sigs.github.io/metrics-server
+    valuesFile: values.yaml
