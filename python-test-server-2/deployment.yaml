@@ -29,6 +29,6 @@ spec:
               value: "5000"
           resources:
             requests:
-              cpu: 100m
+              cpu: 500m
             limits:
-              cpu: 100m
+              cpu: 500m
