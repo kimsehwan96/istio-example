@@ -3,8 +3,6 @@ kind: VirtualService
 metadata:
   name: node-test-server-virtualservice-internal
 spec:
-  # gateways:
-  #   - python-gateway
   hosts:
     - node-test-server-service.node-test-server.svc.cluster.local
   http:
