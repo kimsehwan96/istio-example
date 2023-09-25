@@ -1,0 +1,28 @@
+meshConfig:
+  extensionProviders:
+  - name: envoy
+    envoyFileAccessLog:
+      path: "/dev/stdout"
+      logFormat:
+        labels:
+          start_time: "%START_TIME%"
+          source_host: "%HOSTNAME%"
+          upstream_host: "%UPSTREAM_HOST%"
+          remote_address: "%DOWNSTREAM_DIRECT_REMOTE_ADDRESS%"
+          user_agent: "%REQ(USER-AGENT)%"
+          host: "%REQ(:AUTHORITY)%"
+          protocol: "%PROTOCOL%"
+          bytes_rcvd: "%BYTES_RECEIVED%"
+          request:
+            request_method: "%REQ(:METHOD)%"
+            request_path: "%REQ(X-ENVOY-ORIGINAL-PATH?:PATH)%"
+            request_time: "%DURATION%"
+            request_xff: "%REQ(X-FORWARDED-FOR)%"
+            request_id: "%REQ(X-REQUEST-ID)%"
+          response:
+            response_code: "%RESPONSE_CODE%"
+            response_code_details: "%RESPONSE_CODE_DETAILS%"
+            response_bytes_sent: "%BYTES_SENT%"
+            response_flags: "%RESPONSE_FLAGS%"
+            response_time: "%RESPONSE_DURATION%"
+            response_upstream_time: "%RESP(X-ENVOY-UPSTREAM-SERVICE-TIME)%"

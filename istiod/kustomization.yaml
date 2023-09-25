@@ -16,3 +16,4 @@ helmCharts:
     releaseName: istiod
     version: 1.19.0
     namespace: istio-system
+    valuesFile: istiod-values.yaml
