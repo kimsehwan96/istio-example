@@ -1,3 +1,6 @@
+logging:
+  level: "default:info"
+
 meshConfig:
   extensionProviders:
   - name: envoy
