@@ -6,4 +6,6 @@ resources:
   - ./test-deployment-2.yaml
   - ./service.yaml
   - ./mtls.yaml
+  - ./virtualservice.yaml
+  - ./destinationrule.yaml
 
