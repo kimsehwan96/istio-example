@@ -27,3 +27,8 @@ spec:
               value: "http://python-test-server-service-2.python-test-server-2.svc.cluster.local/forward"
             - name: APP_PORT
               value: "5000"
+          resources:
+            requests:
+              cpu: 100m
+            limits:
+              cpu: 100m

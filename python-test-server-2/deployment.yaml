@@ -27,3 +27,8 @@ spec:
               value: "http://node-test-server-service.node-test-server.svc.cluster.local:80"
             - name: APP_PORT
               value: "5000"
+          resources:
+            requests:
+              cpu: 100m
+            limits:
+              cpu: 100m
