@@ -3,7 +3,6 @@ kind: Deployment
 metadata:
   name: node-test-server-v1
 spec:
-  # replicas: 1
   selector:
     matchLabels:
       app: node-test-server

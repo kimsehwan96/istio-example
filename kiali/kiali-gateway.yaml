@@ -2,13 +2,11 @@ apiVersion: networking.istio.io/v1alpha3
 kind: Gateway
 metadata:
   name: kiali-gateway
-  # namespace: kiali
 spec:
   selector:
     istio: ingressgateway
   servers:
     - hosts:
-        # - kiali.local.dev
         - 'kiali.hayden.com'
       port:
         name: http
