@@ -1,3 +1,8 @@
+global:
+  proxy:
+    logLevel: info
+    componentLogLevel: misc:info
+
 logging:
   level: "default:info"
 
