@@ -22,7 +22,7 @@ spec:
             - containerPort: 3000
               name: http
           resources:
-            request:
+            requests:
               cpu: 100m
             limits:
               cpu: 100m
