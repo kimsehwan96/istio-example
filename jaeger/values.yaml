@@ -1,6 +1,0 @@
-provisionDataStore:
-  cassandra: false
-  elasticsearch: true
-  kafka: false
-storage:
-  type: elasticsearch

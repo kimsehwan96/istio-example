@@ -7,7 +7,12 @@ logging:
   level: "default:info"
 
 meshConfig:
+  enableTracing: true
   accessLogFile: /dev/stdout
+  extensionProviders:
+      zipkin: jaeger-collector.istio-system.svc
+      service: 
+      port: 9411
   # extensionProviders:
   # - name: envoy
   #   envoyFileAccessLog:
