@@ -5,18 +5,22 @@ apps:
     namespace: argocd
     path: apps
     targetRevision: master
+    syncWave: -4
   - name: argocd
     namespace: argocd
     path: argocd
     targetRevision: master
+    syncWave: -3
   - name: istiod
     namespace: istio-system
     path: istiod
     targetRevision: master
+    syncWave: -2
   - name: istio-ingress-gateway
     namespace: istio-ingress
     path: istio-ingress-gateway
     targetRevision: master
+    syncWave: -1
   - name: keycloak
     namespace: keycloak
     path: keycloak

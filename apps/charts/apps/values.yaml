@@ -5,4 +5,4 @@ apps:
     namespace: argocd
     path: apps
     targetRevision: master
-    
+    syncWave: 0
