@@ -63,4 +63,5 @@ apps:
     targetRevision: master
   - name: grpc-python
     namespace: grpc-python
+    path: grpc-python
     targetRevision: master
