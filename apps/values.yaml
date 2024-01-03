@@ -61,3 +61,6 @@ apps:
     namespace: metrics-server
     path: metrics-server
     targetRevision: master
+  - name: grpc-python
+    namespace: grpc-python
+    targetRevision: master

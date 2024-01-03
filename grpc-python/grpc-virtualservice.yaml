@@ -1,0 +1,18 @@
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: grpc-virtualservice
+spec:
+  gateways:
+    - grpc-gateway
+  hosts:
+    - 'grpc.hayden.com'
+  http:
+    - match:
+        - uri:
+            prefix: /
+      route:
+        - destination:
+            host: grpc-python-service.grpc-python.svc.cluster.local
+            port:
+              number: 50051

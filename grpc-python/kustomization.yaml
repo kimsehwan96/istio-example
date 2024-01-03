@@ -1,0 +1,9 @@
+namespace: grpc-python
+
+resources:
+  - ./namespace.yaml
+  - ./deployment.yaml
+  - ./service.yaml
+  - ./mtls.yaml
+  - ./grpc-virtualservice.yaml
+  - ./grpc-gateway.yaml
