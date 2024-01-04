@@ -15,4 +15,4 @@ spec:
         - destination:
             host: grpc-python-service.grpc-python.svc.cluster.local
             port:
-              number: 50051
+              number: 80

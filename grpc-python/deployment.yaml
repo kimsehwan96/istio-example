@@ -18,8 +18,8 @@ spec:
           image: kimsehwan96/python-grpc
           imagePullPolicy: Always
           ports:
-            - containerPort: 50051
-              name: http
+            - containerPort: 7777
+              name: grpc
           resources:
             requests:
               cpu: 500m

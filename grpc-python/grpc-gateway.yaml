@@ -14,3 +14,11 @@ spec:
         protocol: HTTP
       tls:
         httpsRedirect: false
+    - hosts:
+        - 'grpc.hayden.com'
+      port:
+        name: grpc
+        number: 80
+        protocol: GRPC
+      tls:
+        httpsRedirect: false
