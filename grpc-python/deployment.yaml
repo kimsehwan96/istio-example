@@ -12,6 +12,8 @@ spec:
       labels:
         app: grpc-python
         sidecar.istio.io/inject: 'true'
+      annotations:
+         sidecar.istio.io/rewriteAppHTTPProbers: "false"
     spec:
       containers:
         - name: grpc-python
@@ -28,4 +30,4 @@ spec:
           readinessProbe:
             grpc:
               port: 7777
-              service: grpc.health.v1.Health.Check
+
