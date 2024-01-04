@@ -11,7 +11,7 @@ spec:
       match:
         context: SIDECAR_INBOUND
         listener:
-          portNumber: 7777
+          portNumber: 7777 # 5xxxx 번대 포트를 지정하면 반영이 안된다. 이건 왜그런지;
           filterChain:
             filter:
               name: "envoy.filters.network.http_connection_manager"
