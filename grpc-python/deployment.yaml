@@ -25,3 +25,7 @@ spec:
               cpu: 500m
             limits:
               cpu: 500m
+          readinessProbe:
+            grpc:
+              port: 7777
+              service: grpc.health.v1.Health.Check
