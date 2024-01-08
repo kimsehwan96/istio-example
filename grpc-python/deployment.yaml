@@ -21,6 +21,8 @@ spec:
       containers:
         - name: grpc-python
           image: kimsehwan96/python-grpc
+          # https://github.com/kimsehwan96/gRPC-python-example 
+          # 위 레포의 파이썬 코드를 빌드한 이미지임. 개인적으로 빌드해서 사용하시거나, 위 dockerhub repo 에서 땡겨서 쓰세요
           imagePullPolicy: Always
           ports:
             - containerPort: 7777
