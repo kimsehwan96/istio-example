@@ -9,16 +9,9 @@ spec:
     - hosts:
         - 'grpc.hayden.com'
       port:
-        name: http
-        number: 80
-        protocol: HTTP
-      tls:
-        httpsRedirect: false
-    - hosts:
-        - 'grpc.hayden.com'
-      port:
-        name: grpc
+        name: http-and-grpc
         number: 80
         protocol: GRPC
       tls:
         httpsRedirect: false
+    # HTTP, GRPC 동시에 명시하지 않아도 , HTTP / GRPC 하나만 명시해도 동작함.
