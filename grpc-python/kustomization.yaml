@@ -8,3 +8,11 @@ resources:
   - ./grpc-virtualservice.yaml
   - ./grpc-gateway.yaml
   - ./envoy-filter.yaml
+
+configMapGenerator:
+  - name: grpc-python-proto-descriptor-configmap
+    files:
+      - ./helloworld.pb
+
+generatorOptions:
+  disableNameSuffixHash: true
