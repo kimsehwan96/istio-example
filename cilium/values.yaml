@@ -1,0 +1,12 @@
+hubble:
+  relay:
+    enabled: true
+    service:
+      type: ClusterIP
+  ui:
+    enabled: true
+    service:
+      type: ClusterIP
+socketLB:
+  enabled: true
+  hostNamespaceOnly: true
