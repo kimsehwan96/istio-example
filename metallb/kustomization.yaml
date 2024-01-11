@@ -1,0 +1,14 @@
+namespace: metallb-system
+
+resources:
+  - ./metallb-namespace.yaml
+  - ./ip-address-pool.yaml
+
+helmCharts:
+  - name: metallb
+    includeCRDs: true
+    repo: https://metallb.github.io/metallb
+    releaseName: metallb
+    version: v0.13.12
+    namespace: metallb-system
+    valuesFile: values.yaml
