@@ -8,12 +8,12 @@ helmCharts:
     includeCRDs: true
     repo: https://istio-release.storage.googleapis.com/charts
     releaseName: istio-base
-    version: 1.19.0
+    version: 1.20.2
     namespace: istio-system
   - name: istiod
     includeCRDs: true
     repo: https://istio-release.storage.googleapis.com/charts
     releaseName: istiod
-    version: 1.19.0
+    version: 1.20.2
     namespace: istio-system
     valuesFile: istiod-values.yaml
