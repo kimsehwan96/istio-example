@@ -1,6 +1,5 @@
-namespace: kube-system
-
-
+# namespace: kube-system
+# 위새끼가 문제였..
 helmCharts:
   - name: cilium
     includeCRDs: true

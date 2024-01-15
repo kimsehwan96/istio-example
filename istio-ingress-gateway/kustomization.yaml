@@ -7,5 +7,5 @@ helmCharts:
     includeCRDs: true
     repo: https://istio-release.storage.googleapis.com/charts
     releaseName: istio-ingressgateway
-    version: 1.19.0
+    version: 1.20.2
     namespace: istio-system

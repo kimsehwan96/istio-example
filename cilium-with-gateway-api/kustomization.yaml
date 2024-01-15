@@ -1,0 +1,8 @@
+namespace: httpbin
+
+resources:
+  - ./httpbin-namespace.yaml
+  - ./httpbin.yaml
+  - ./gateway.yaml
+  - ./httproute.yaml
+  - ./service.yaml

@@ -10,12 +10,16 @@ metadata:
   name: httpbin
   labels:
     app: httpbin
-    sidecar.istio.io/inject: 'true'
+    # sidecar.istio.io/inject: 'true'
 spec:
   terminationGracePeriodSeconds: 3
   containers:
   - name: httpbin
     image: kennethreitz/httpbin
+    ports:
+      - containerPort: 80
+        name: http
+        protocol: TCP
 ---
 apiVersion: v1
 kind: Service
@@ -31,50 +35,50 @@ spec:
       protocol: TCP
       port: 80
       targetPort: 80
----
-apiVersion: networking.istio.io/v1alpha3
-kind: Gateway
-metadata:
-  name: httpbin-gateway
-  namespace: httpbin
-spec:
-  selector:
-    istio: ingressgateway
-  servers:
-    - hosts:
-        - 'app.hayden.com'
-      port:
-        name: http
-        number: 80
-        protocol: HTTP
-      tls:
-        httpsRedirect: false
-    # - hosts:
-    #     - httpbin.local.dev
-    #   port:
-    #     name: https
-    #     number: 443
-    #     protocol: HTTPS
-    #   tls:
-    #     mode: SIMPLE
-    #     credentialName: httpbin-cert
----
-apiVersion: networking.istio.io/v1alpha3
-kind: VirtualService
-metadata:
-  name: httpbin-virtualservice
-  namespace: httpbin
-spec:
-  gateways:
-    - httpbin-gateway
-  hosts:
-    - 'app.hayden.com'
-  http:
-    - match:
-        - uri:
-            prefix: /
-      route:
-        - destination:
-            host: httpbin-service.httpbin.svc.cluster.local
-            port:
-              number: 80
+# ---
+# apiVersion: networking.istio.io/v1alpha3
+# kind: Gateway
+# metadata:
+#   name: httpbin-gateway
+#   namespace: httpbin
+# spec:
+#   selector:
+#     istio: ingressgateway
+#   servers:
+#     - hosts:
+#         - 'app.hayden.com'
+#       port:
+#         name: http
+#         number: 80
+#         protocol: HTTP
+#       tls:
+#         httpsRedirect: false
+#     # - hosts:
+#     #     - httpbin.local.dev
+#     #   port:
+#     #     name: https
+#     #     number: 443
+#     #     protocol: HTTPS
+#     #   tls:
+#     #     mode: SIMPLE
+#     #     credentialName: httpbin-cert
+# ---
+# apiVersion: networking.istio.io/v1alpha3
+# kind: VirtualService
+# metadata:
+#   name: httpbin-virtualservice
+#   namespace: httpbin
+# spec:
+#   gateways:
+#     - httpbin-gateway
+#   hosts:
+#     - 'app.hayden.com'
+#   http:
+#     - match:
+#         - uri:
+#             prefix: /
+#       route:
+#         - destination:
+#             host: httpbin-service.httpbin.svc.cluster.local
+#             port:
+#               number: 80
