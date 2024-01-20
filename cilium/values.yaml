@@ -7,20 +7,3 @@ hubble:
     enabled: true
     service:
       type: ClusterIP
-socketLB:
-  enabled: true
-  hostNamespaceOnly: true # istio 와의 integration 을 위해 필요함
-# 아래 항목은 gatewayAPI 를 사용하기 위해 필요함
-kubeProxyReplacement: true
-gatewayAPI:
-  enabled: true
-ingressController:
-  enabled: true
-  loadbalancerMode: shared
-loadBalancer:
-  l7:
-    backend: envoy
-envoy:
-  enabled: true
-k8sServiceHost: "192.168.0.100"
-k8sServicePort: "8443"
