@@ -7,8 +7,8 @@ secrets:
         schema-registry:
           url: "http://schema-registry:8085"
           type: "confluent"
-          basic-auth-username: basic-auth-user
-          basic-auth-password: basic-auth-pass
+          basic-auth-username: hayden
+          basic-auth-password: 1234
         connect:
           - name: "my-connect"
             url: "http://connect:8083"
