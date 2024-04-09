@@ -1,0 +1,22 @@
+namespace: kafka
+
+resources:
+  - ./kafka-namespace.yaml
+  - ./kafka-cluster.yaml
+  - ./kafka-user-secret.yaml
+  - ./kafka-user.yaml
+helmCharts:
+  - name: strimzi-kafka-operator
+    includeCRDs: true
+    repo: https://strimzi.io/charts/
+    releaseName: strimzi-kafka-operator
+    version: v0.40.0
+    namespace: kafka
+    valuesFile: values.yaml
+
+  - name: schema-registry
+    repo: https://charts.bitnami.com/bitnami
+    version: 18.0.2
+    releaseName: schema-registry
+    namespace: kafka
+    valuesFile: schema-registry-values.yaml

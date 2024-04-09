@@ -1,0 +1,18 @@
+auth:
+  kafka:
+    saslMechanism: plain
+
+listeners: http://0.0.0.0:8081
+
+externalKafka:
+  brokers:
+    - PLAINTEXT://my-cluster-broker-0.headless.kafka.svc.cluster.local:9092
+    - PLAINTEXT://my-cluster-broker-1.headless.kafka.svc.cluster.local:9092
+    - PLAINTEXT://my-cluster-broker-2.headless.kafka.svc.cluster.local:9092
+  listeners:
+    protocol: PLAINTEXT
+
+  sasl:
+    user: hayden
+    password: 1234
+  

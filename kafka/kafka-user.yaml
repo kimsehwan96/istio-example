@@ -1,0 +1,32 @@
+apiVersion: kafka.strimzi.io/v1beta2
+kind: KafkaUser
+metadata:
+  name: hayden
+  labels:
+    strimzi.io/cluster: my-cluster
+spec:
+  authentication:
+    type: scram-sha-512
+    password:
+      valueFrom:
+        secretKeyRef:
+          name: hayden-password
+          key: PASSWORD
+  authorization:
+    type: simple
+    acls:
+      - resource:
+          type: group
+          name: '*'
+          patternType: literal
+        operation: All
+      - resource:
+          type: topic
+          name: '*'
+          patternType: literal
+        operation: All
+      - resource:
+          type: cluster
+          name: '*'
+          patternType: literal
+        operation: All
