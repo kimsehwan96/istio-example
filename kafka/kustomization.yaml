@@ -5,6 +5,7 @@ resources:
   - ./kafka-cluster.yaml
   - ./kafka-user-secret.yaml
   - ./kafka-user.yaml
+  - ./kafka-connect.yaml
 helmCharts:
   - name: strimzi-kafka-operator
     includeCRDs: true
@@ -20,3 +21,10 @@ helmCharts:
     releaseName: schema-registry
     namespace: kafka
     valuesFile: schema-registry-values.yaml
+
+  - name: akhq
+    repo: https://akhq.io/
+    version: 0.3.1
+    releaseName: akhq
+    namespace: kafka
+    valuesFile: akhq-values.yaml
