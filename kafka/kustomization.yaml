@@ -6,6 +6,7 @@ resources:
   - ./kafka-user-secret.yaml
   - ./kafka-user.yaml
   - ./kafka-connect.yaml
+  - ./my-topic.yaml
 helmCharts:
   - name: strimzi-kafka-operator
     includeCRDs: true
