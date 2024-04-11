@@ -8,7 +8,7 @@ externalKafka:
   brokers:
     - PLAINTEXT://my-cluster-kafka-brokers.kafka.svc.cluster.local:9092
   listeners:
-    protocol: PLAINTEXT
+    protocol: SASL_PLAINTEXT
 
   sasl:
     user: hayden

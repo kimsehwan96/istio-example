@@ -5,12 +5,12 @@ secrets:
         properties:
           bootstrap.servers: "my-cluster-kafka-bootstrap.kafka.svc.cluster.local:9092"
         schema-registry:
-          url: "http://schema-registry:8085"
+          url: "http://schema-registry.kafka.svc.cluster.local:8081"
           type: "confluent"
           basic-auth-username: hayden
           basic-auth-password: 1234
         connect:
           - name: "my-connect"
-            url: "http://connect:8083"
+            url: "http://my-connect-cluster-connect-api.kafka.svc.cluster.local:8083" # ??
             basic-auth-username: basic-auth-user
             basic-auth-password: basic-auth-pass
