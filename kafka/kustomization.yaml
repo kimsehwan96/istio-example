@@ -14,7 +14,7 @@ helmCharts:
     releaseName: strimzi-kafka-operator
     version: v0.40.0
     namespace: kafka
-    valuesFile: values.yaml
+    valuesFile: strimzi-values.yaml
 
   - name: schema-registry
     repo: https://charts.bitnami.com/bitnami
