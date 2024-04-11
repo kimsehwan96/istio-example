@@ -8,23 +8,24 @@ spec:
   replicas: 3
   roles:
     - controller
-  storage:
-    type: ephemeral
----
-
-apiVersion: kafka.strimzi.io/v1beta2
-kind: KafkaNodePool
-metadata:
-  name: broker
-  labels:
-    strimzi.io/cluster: my-cluster
-spec:
-  replicas: 3
-  roles:
     - broker
   storage:
     type: ephemeral
 ---
+
+# apiVersion: kafka.strimzi.io/v1beta2
+# kind: KafkaNodePool
+# metadata:
+#   name: broker
+#   labels:
+#     strimzi.io/cluster: my-cluster
+# spec:
+#   replicas: 3
+#   roles:
+#     - broker
+#   storage:
+#     type: ephemeral
+# ---
 
 apiVersion: kafka.strimzi.io/v1beta2
 kind: Kafka
