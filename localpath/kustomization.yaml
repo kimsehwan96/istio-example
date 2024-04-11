@@ -1,0 +1,36 @@
+namespace: local-path-storage
+
+resources:
+  - ./localpath-namespace.yaml
+
+helmCharts:
+  - name: local-path-provisioner
+    repo: https://charts.containeroo.ch
+    version: 0.0.22
+    releaseName: local-path
+    namespace: local-path-storage
+    valuesInline:
+      image:
+        repository: rancher/local-path-provisioner
+        tag: v0.0.22
+        pullPolicy: IfNotPresent
+      helperImage:
+        repository: busybox
+        tag: latest
+      storageClass:
+        create: true
+        provisionerName: rancher.io/local-path
+        defaultClass: true
+        name: local-path
+        reclaimPolicy: Delete
+      configmap:
+        name: local-path-config
+        setup: |-
+          #!/bin/sh
+          set -eu
+          mkdir -m 0777 -p "$VOL_DIR"
+        teardown: |-
+          #!/bin/sh
+          set -eu
+          rm -rf "$VOL_DIR"
+
