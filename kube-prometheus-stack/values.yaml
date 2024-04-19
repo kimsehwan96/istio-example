@@ -7,7 +7,7 @@ prometheus:
       volumeClaimTemplate:
         spec:
           # storageClassName: hostpath
-          storageClassName: local-path
+          storageClassName: gp2
           accessModes:
             - ReadWriteOnce
           resources:
